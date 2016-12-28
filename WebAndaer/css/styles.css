@@ -1,50 +1,37 @@
 ﻿body {
-    font-family:Arial;
-    font-size:12pt;
-    color:#2a6496;
+    padding-top:50px;
 }
-
-.post-wrapper{
-    float:left;
+img{
     width:100%;
-    margin:5% 0 0 0;
-    padding:0 0 0 0;
+}
+.navbar-inverse input[type="text"]{
+    background:#313131;
+    border:none;
+    color:#999;
 }
 
-.blog-post-label{
-    float:left;
-    width:100%;
-    margin:10% 0 0 0;
-    padding:0 0 0 0;
-    text-align:center;
-    font-weight:bold;
-    font-size:16pt;
-    background:red;
+.navbar-inverse .navbar-form{
+    position:relative;
 }
 
-.blog-post-outer{
-    float:left;
-    width:60%;
-    margin:2% 0 2% 20%;
-    padding:1%;
-    background:#e0e0e0;
-    border-radius:6px;
-    -moz-border-radius:6px;
-    border:darkgreen solid 1px;
+.navbar-inverse button[type="submit"]{
+    position:absolute;
+    top:30%;
+    right:20px;
+    background:none;
+    border:none;
 }
 
-.blog-intro-text{
-    float:left;
-    width:100%;
-    margin:0 0 0 0;
-    padding:0 0 0 0;
-    text-align:center;
+@media(min-width:768px){
+    .navbar-inverse button[type="submit"]{
+        top:15%;
+    }
 }
 
-.blog-read-more{
-    float:left;
-    width:100%;
-    margin:2% 0 0 0;
-    padding:0 0 0 0;
-    text-align:center;
+.navbar-inverse .glyphicon{
+    color:#999;
+}
+
+.profile{
+    margin-right :20px;
 }

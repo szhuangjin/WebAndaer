@@ -1,11 +1,11 @@
 ﻿'use strict'
 
-var blogApp = angular.module('blogApp', ['ngRoute', 'blogControllers']);
+var andaerApp = angular.module('andaerApp', ['ngRoute', 'andaerControllers','andaerServices']);
 
-blogApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+andaerApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
         templateUrl: 'partials/main.html',
-        controller:'BlogCtrl'
+        controller:'mainCtrl'
     });
 
     $locationProvider.html5Mode(false).hashPrefix('!')

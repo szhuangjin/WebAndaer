@@ -1,20 +1,45 @@
 ﻿<div ng-include src="'partials/menu.html'"></div>
 
-<div id="container" class="container">
-    <div class="blog-post-label">Blog Posts</div>
-    <div class="post-wrapper">
-        <div ng-repeat="blogPost in blogList">
-            <div class="blog-post-outer">
-                <div class="blog-intro-text">
-                    Posted:{{blogPost.date | date:'MM/dd/yyyy @ h:mma'}}
+    <div class="carousel slide"  id="slideshow" data-ride="carousel" >
+        <ol class="carousel-indicators">
+            <li class="active" data-target="#slideshow" data-slide-to="0"></li>
+            <li  data-target="#slideshow" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="../img/1.png" alt=""/>
+                <div class="carousel-caption">
+                    <h2>BootStrap</h2>
+                    <p>fasdfsdfafda</p>
                 </div>
-                <div class="blog-intro-text">
-                    {{blogPost.introText}}
-                </div>
-                <div class="blog-read-more">
-                    <a href="#!blogPost/{{blogPost._id}}">Read More</a>
+            </div>
+            <div class="item ">
+                <img src="../img/2.png" alt=""/>
+                <div class="carousel-caption">
+                    <h2>BootStrap</h2>
+                    <p>fasdfsdfafda</p>
                 </div>
             </div>
         </div>
+        <a href="#slideshow" data-slide="prev" class="left carousel-control">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a href="#slideshow" data-slide="next" class="right carousel-control">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
     </div>
-</div>
+    <div class="text-center" style="padding:20px">
+        <div class="btn-group">
+            <button class="btn btn-default prev-slide" ng-click="funprev()">
+                <span class="glyphicon glyphicon-backward"></span>
+            </button>
+            <button class="btn btn-default play-and-stop" ng-click="funplay($event.target)">
+                <span class="glyphicon glyphicon-play"></span>
+            </button>
+            <button class="btn btn-default next-slide" ng-click="funnext()">
+                <span class="glyphicon glyphicon-forward"></span>
+            </button>
+        </div>
+    </div>
+
+

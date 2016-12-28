@@ -1,22 +1,44 @@
 ﻿'use strict'
 
-var blogControllers = angular.module('blogControllers', []);
+var andaerControllers = angular.module('andaerControllers', []);
 
-blogControllers.controller('BlogCtrl', ['$scope', function BlogCtrl($scope) {
-    $scope.blogList = [
-        {
-            "_id": 1,
-            "date": 1400623623107,
-            "introText": "This is a blog post about AngularJS.",
-            "blogText":"This is a blog post about AngularJS.\
-            We will cover how to  build a blog and how to add comments to the blog post"
-        },
-        {
-            "_id": 2,
-            "date": 1400267723107,
-            "introText": "This is a blog post about AngularJS.",
-            "blogText": "This is a blog post about AngularJS.\
-            We will cover how to  build a blog and how to add comments to the blog post"
+andaerControllers.controller('mainCtrl', ['$scope',
+    function mainCtrl($scope) {
+        $('#slideshow').carousel({});
+        $scope.funprev = function () {
+            $('#slideshow').carousel('prev');
+        };
+        $scope.funnext = function () {
+            $('#slideshow').carousel('next');
+        };
+        $(document).on('keydown', function (e) {
+            switch (e.which) {
+                case 37:
+                    $scope.funprev();
+                    break;
+                case 39:
+                    $scope.funnext();
+                    break;
+                default:
+                    break;
+            }
+        })
+        $('#slideshow').on('slide.bs.carousel', function () {
+            console.log('play');
+        }).on('slid.bs.carousel', function () {
+            console.log('end');
+        });
+        var play = false;
+        $scope.funplay = function (o) {
+            //console.log($(o))
+            if (!play) {
+                
+                $('#slideshow').carousel('cycle');
+                $(o).children('span').removeClass('glyphicon-play').addClass('glyphicon-pause');
+            } else {
+                $('#slideshow').carousel('pause');
+                $(o).children('span').removeClass('glyphicon-pause').addClass('glyphicon-play');
+            }
+            play = !play;
         }
-    ];
-}]);
+    }]);
